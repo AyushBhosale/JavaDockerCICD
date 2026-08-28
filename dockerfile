@@ -5,7 +5,7 @@ COPY pom.xml .
 COPY src ./src
 RUN mvn -B package -DskipTests
 
-FROM eclipse-termurin:25-jre-focal
+FROM eclipse-temurin:25-jre-focal
 WORKDIR /app
 COPY --from=build /app/target/cicd-0.0.1-SNAPSHOT.jar app.jar
 EXPOSE 8000
